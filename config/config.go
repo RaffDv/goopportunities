@@ -13,12 +13,14 @@ var (
 
 func Init() error {
 
+	logger := GetLogger("[CONFIG]")
 	var err error
 
 	db, err = InitializePostgres()
 	if err != nil {
 		return fmt.Errorf("error initializing postgres: %v", err)
 	}
+	logger.Info("Config init")
 
 	return nil
 }

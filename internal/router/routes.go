@@ -6,6 +6,7 @@ import (
 )
 
 func initializeRoutes(r *gin.Engine) {
+
 	v1 := r.Group("/api/v1")
 
 	opp := v1.Group("/opening")
