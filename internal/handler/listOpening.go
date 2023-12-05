@@ -3,11 +3,15 @@ package handler
 import (
 	"net/http"
 
+	"github.com/RaffDv/goopportunities/internal/schema"
 	"github.com/gin-gonic/gin"
 )
 
 func ListOpeningsHandler(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": "GET opening",
-	})
+
+	openings := []schema.Opening{}
+
+	db.Find(&openings)
+
+	sendSuccess(c, http.StatusOK, "list-openings", openings)
 }

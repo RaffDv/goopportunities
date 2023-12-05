@@ -23,3 +23,26 @@ Content-Type: : application/json
 # @name delete-opening
 
 DELETE http://localhost:4000/api/v1/opening/?id=7 HTTP/1.1
+
+###
+
+# @name find-opening
+
+GET http://localhost:4000/api/v1/opening/?id=8 HTTP/1.1
+###
+
+# @name list-openings
+
+GET http://localhost:4000/api/v1/opening/all HTTP/1.1
+
+
+###
+
+# @name update-opening
+
+PUT http://localhost:4000/api/v1/opening/?id=8 HTTP/1.1
+Content-Type: application/json
+
+{
+   "role":"backend engineer Go lang"
+}
