@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/RaffDv/goopportunities/config"
 	"github.com/RaffDv/goopportunities/internal/router"
 )
@@ -10,8 +12,10 @@ var (
 )
 
 func main() {
+	fmt.Println("INIT")
 
 	logger = config.GetLogger("[ MAIN ]")
+	logger.Info("init main")
 
 	err := config.Init()
 	if err != nil {
