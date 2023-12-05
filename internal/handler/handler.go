@@ -18,7 +18,6 @@ func init() {
 
 	if err != nil {
 		logger.Errorf("error initializing postgres: %v", err.Error())
-		return
 	}
 
 	logger.Info("Handler init")
