@@ -18,7 +18,7 @@ func FindOpeningHandler(c *gin.Context) {
 
 	opening := schema.Opening{}
 
-	db.Find(&opening, id)
+	db.First(&opening, id)
 	if opening.ID == 0 {
 		sendError(c, http.StatusNotFound, fmt.Sprintf("opening with id : %s not found", id))
 		return
